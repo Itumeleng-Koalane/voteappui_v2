@@ -1,22 +1,22 @@
 <div class="container">
     <div class="screen">
         <div class="screen__content">
-            <form class="login">
+            <form class="login" #form="ngForm" (onSubmit)="onFormRegister()">
                 <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
-                    <input type="text" name="Email" class="login__input" placeholder="Please Enter Email" id="Email">
+                    <input type="text" class="form-control" class="login__input" name="email" [(ngModel)]="model.email" placeholder="Please Enter Email" id="email">
                 </div>
                 <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="text" name="iDnum" class="login__input" placeholder="ID number" id="IDnum">
+                    <input type="text" class="form-control" class="login__input" name="iDnum" [(ngModel)]="model.iDnum" placeholder="ID number" id="iDnum">
                 </div>
                 <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="text" name="Name" class="login__input" placeholder="Name" id="Name">
+                    <input type="text" class="form-control" class="login__input" name="name" [(ngModel)]="model.name" placeholder="Name" id="name">
                 </div>
                 <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="text" name="Surname" class="login__input" placeholder="Surname" id="Surname">
+                    <input type="text" class="form-control" class="login__input" name="surname" [(ngModel)]="model.surname" placeholder="Surname" id="surname">
                 </div>
                 <button class="button login__submit">
                     <span class="button__text"> Register </span>

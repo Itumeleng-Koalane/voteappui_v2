@@ -4,11 +4,18 @@ import { NavbarComponent } from "./pages/navbar/navbar.component";
 import { LandingScreenComponent } from "./pages/landing-screen/landing-screen.component";
 import { LoginScreenComponent } from "./pages/login-screen/login-screen.component";
 import { RegisterScreenComponent } from "./pages/register-screen/register-screen.component";
+import { RegisterService } from './pages/services/register.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, LandingScreenComponent, LoginScreenComponent, RegisterScreenComponent],
+  imports: [
+  RouterOutlet,
+  NavbarComponent,
+  LandingScreenComponent,
+  LoginScreenComponent,
+  RegisterScreenComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
