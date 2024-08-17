@@ -15,6 +15,7 @@ import { RegisterService } from './pages/services/register.service';
   LandingScreenComponent,
   LoginScreenComponent,
   RegisterScreenComponent,
+  RegisterService
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

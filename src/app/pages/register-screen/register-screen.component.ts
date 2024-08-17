@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AddRegisterRequest } from '../models/add-register-request.model';
 import { RegisterService } from '../services/register.service';
@@ -9,7 +9,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClient,
+    NgModule
   ],
   templateUrl: './register-screen.component.html',
   styleUrl: './register-screen.component.css',
