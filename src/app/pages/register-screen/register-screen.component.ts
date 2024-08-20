@@ -1,25 +1,24 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AddRegisterRequest } from '../models/add-register-request.model';
 import { RegisterService } from '../services/register.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register-screen',
   standalone: true,
   imports: [
-    FormsModule,
-    HttpClientModule,
-    HttpClient,
-    NgModule
+    FormsModule
   ],
   templateUrl: './register-screen.component.html',
   styleUrl: './register-screen.component.css',
 })
 
-export class RegisterScreenComponent {
+export class RegisterScreenComponent implements OnDestroy {
 
   model : AddRegisterRequest;
+
+  private addRegisterSubscription? : Subscription
 
   constructor(private registerService: RegisterService){
     this.model = {
@@ -29,14 +28,19 @@ export class RegisterScreenComponent {
       surname : '',
     };
   }
-
+  
   onFormRegister(){
-    this.registerService.AddRegister(this.model).subscribe({
-      next: (response) => {
-
+    this.addRegisterSubscription = this.registerService.AddRegister(this.model).subscribe(
+      res => {
+        console.log('Saved to the DB Successfully!!');
+      },
+      error => {
+        console.log('Error: Could not save to the DB!!!');
       }
-    });
+    )
+  }
+  
+  ngOnDestroy(): void {
+    this.addRegisterSubscription?.unsubscribe();
   }
 }
-
-

@@ -6,6 +6,7 @@ import { RegisterScreenComponent } from './pages/register-screen/register-screen
 import { LandingScreenComponent } from './pages/landing-screen/landing-screen.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { FormsModule } from '@angular/forms';
+import { provideClientHydration } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     AppModule,
     FormsModule,
   ],
-  providers:[],
+  providers:[provideClientHydration()],
   bootstrap:[AppModule]
 })
 export class AppModule { }

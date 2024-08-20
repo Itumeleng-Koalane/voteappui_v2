@@ -1,7 +1,7 @@
 <div class="container">
     <div class="screen">
         <div class="screen__content">
-            <form class="login" #form="ngForm" (onSubmit)="onFormRegister()">
+            <form class="login" #form="ngForm" (ngSubmit)="onFormRegister()">
                 <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
                     <input type="text" class="form-control" class="login__input" name="email" [(ngModel)]="model.email" placeholder="Please Enter Email" id="email">

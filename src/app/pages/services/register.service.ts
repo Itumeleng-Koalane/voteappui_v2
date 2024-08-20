@@ -11,7 +11,6 @@ export class RegisterService {
   constructor(private http : HttpClient) { }
 
   AddRegister(model: AddRegisterRequest): Observable<void>{
-    return this.http.post<void>('https://localhost:7035/api/Registories',model);
-    
+    return this.http.post<void>('https://localhost:7035/api/Registories', model);
   }
 }
